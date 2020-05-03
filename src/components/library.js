@@ -4,26 +4,25 @@ import Bookshelf from './Bookshelf';
 import Favorites from './Favorites';
 
 
-
-
 export default class Library extends Component {
     
-        state = {
-            bookshelf: [],
-            favorites: []
-        }
+    state = {
+        books: [],
+        favorites: []
+    }
 
-        componentDidMount(){
-            fetch(`http://localhost:3000/books`)
-               .then(response => response.json())
-               .then(bookshelf => this.setState({bookshelf}))
-        }
+    componentDidMount(){
+        fetch(`http://localhost:3000/books`)
+            .then(response => response.json())
+            .then(books => this.setState({books})
+        )
+    }
 
-        render(){
+    render(){
        return(
             <div className='library'>
             <Favorites/> 
-            <Bookshelf/>
+            <Bookshelf books={this.state.books}/>
             </div>
         )
     }
