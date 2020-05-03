@@ -7,8 +7,20 @@ import Favorites from './Favorites';
 
 
 export default class Library extends Component {
-    render(){
-        return(
+    
+        state = {
+            bookshelf: [],
+            favorites: []
+        }
+
+        componentDidMount(){
+            fetch(`http://localhost:3000/books`)
+               .then(response => response.json())
+               .then(bookshelf => this.setState({bookshelf}))
+        }
+
+        render(){
+       return(
             <div className='library'>
             <Favorites/> 
             <Bookshelf/>
