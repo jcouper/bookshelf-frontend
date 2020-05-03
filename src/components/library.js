@@ -1,5 +1,7 @@
 import React from 'react';
 import { Component } from "react";
+import Bookshelf from './Bookshelf';
+import Favorites from './Favorites';
 
 
 
@@ -7,7 +9,10 @@ import { Component } from "react";
 export default class Library extends Component {
     render(){
         return(
-            <h1>This is working!</h1>
+            <div className='library'>
+            <Favorites/> 
+            <Bookshelf/>
+            </div>
         )
     }
 }
