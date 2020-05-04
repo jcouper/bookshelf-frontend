@@ -5,9 +5,12 @@ import { Card } from 'react-bootstrap';
 
 export default function BookCard(props) {
 
+    function handleClick(){
+        props.action(props.book)
+    }
+
     return(
-        
-        <Card key={props.key} >
+        <Card key={props.key} onClick={handleClick} >
             <Card.Img src={props.book.image}/>
             <Card.Body >
             <Card.Title>{props.book.title}</Card.Title>

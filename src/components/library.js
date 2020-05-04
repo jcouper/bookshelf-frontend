@@ -19,11 +19,22 @@ export default class Library extends Component {
         )
     }
 
+    addBookToFavorties = book => {
+        if (!this.state.favorites.find(bookToCheck => bookToCheck == book))
+        this.setState({favorites: [...this.state.favorites, book]})
+    }
+
+    removeBookFromFavorites = book => {
+        
+        const newFavorites = (this.state.favorites.filter(bookToCheck => bookToCheck !== book))
+        this.setState({favorites: newFavorites})
+    }
+
     render(){
        return(
             <div className='library'>
-            <Favorites/> 
-            <Bookshelf books={this.state.books}/>
+            <Favorites favorites={this.state.favorites} action={this.removeBookFromFavorites}/> 
+            <Bookshelf books={this.state.books} action={this.addBookToFavorties}/>
             </div>
         )
     }
