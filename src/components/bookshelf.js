@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BookCard from './BookCard'
+import { CardDeck } from 'react-bootstrap';
 
 export default class Bookshelf extends Component {
     render(){
@@ -8,12 +9,10 @@ export default class Bookshelf extends Component {
         })
         return(
 
-            <div className='book-row'>
-                <div className ='book'>
-                    <h1>Bookshelf</h1>
-                    {bookShelf}
-                </div>
-            </div>
+                    <CardDeck>
+                        {bookShelf}
+                    </CardDeck>
+
         )
     }
 }
