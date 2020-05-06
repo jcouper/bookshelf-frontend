@@ -5,11 +5,13 @@
   margin-top: 0rem;
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .card {
   margin: 3rem;
-  min-width: 10rem;
+  min-width: 12rem;
   max-width: 20rem;
   width: 20rem;
+  flex-grow: 0 !important;
 }

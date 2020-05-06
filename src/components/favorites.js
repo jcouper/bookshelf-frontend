@@ -15,4 +15,4 @@ export default function Favorites(props){
                  </CardDeck>
         </div>
     )
-    }
+}

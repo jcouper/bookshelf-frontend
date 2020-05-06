@@ -20,7 +20,7 @@ export default class Library extends Component {
     }
 
     addBookToFavorties = book => {
-        if (!this.state.favorites.find(bookToCheck => bookToCheck == book))
+        if (!this.state.favorites.find(bookToCheck => bookToCheck === book))
         this.setState({favorites: [...this.state.favorites, book]})
     }
 

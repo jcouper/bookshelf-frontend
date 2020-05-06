@@ -3,10 +3,11 @@ import { Card } from 'react-bootstrap';
 
 export default function BookCard(props) {
 
-    function handleClick(){
+    function handleClick(event){
+        if (event.target.tagName !== 'A'){
         props.action(props.book)
+        }
     }
-
     return(
         <Card key={props.key} onClick={handleClick} >
             <Card.Img src={props.book.image}/>
@@ -16,6 +17,5 @@ export default function BookCard(props) {
             <Card.Link href={props.book.amazon_product_url}>Buy on Amazon</Card.Link>
          </Card.Body>
         </Card>
-        
     )
 }
